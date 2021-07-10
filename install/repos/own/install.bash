@@ -1,6 +1,58 @@
 
 #Installing ubuntu 20 config
 
+EMAIL='hackjack@tutanota.com'
+USR='hackjack'
+GITHUBPROFILE='craftsmandigital'
+
+
+# Creating enviroment structure
+# moving dotfiles from ~ later on
+mkdir $HOME/.config/zsh
+# Repo stuff
+mkdir $HOME/repos
+mkdir $HOME/repos/own
+mkdir $HOME/repos/others
+# Creating a stow dir to store configs
+mkdir $HOME/stow
+mkdir $HOME/stow/zsh
+
+
+
+#Initializing git
+git config --global user.email $EMAIL
+git config --global user.name $USR
+
+
+
+# keygen stuff, Credentials for github
+#https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+ssh-keygen -t ed25519 -C $EMAIL
+eval "$(ssh-agent -s)"
+# Copy ssh key to clipoard
+cat ~/.ssh/id_ed25519.pub | clip.exe
+# opening browser page for creating a new ssh key on github
+wslview https://github.com/settings/keys
+read -p "The ssh key is copied to the clipboard\nPaste ssh key when creating a new ssh key in the github web page\nSave ssh key\nPress any key to resume ..."
+
+
+# install stow
+# https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
+sudo apt-get update -y
+sudo apt-get install -y stow
+
+
+
+# Downoload my dotfiles
+cd ~/stow
+git clone git@github.com:$GITHUBPROFILE/dotfiles.git
+# Spread dotfiles to the right places
+# Here you can read more about stow
+# https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
+stow */ # Everything (the '/' ignores the README)
+cd ~
+
+
 # How to Install and Setup Zsh in Ubuntu 20.04
 # https://www.tecmint.com/install-zsh-in-ubuntu/
 sudo apt install zsh -y
@@ -10,40 +62,13 @@ sudo apt install zsh -y
 # https://www.tecmint.com/install-zsh-in-ubuntu/
 chsh -s $(which zsh)
 # NB! NB! Now to use the new zsh shell, log out of the terminal and log in again
-
-# moving config from home dir to zsh dir
-mkdir $HOME/.config
-mkdir $HOME/.config/zsh
-# mv $HOME/.zshrc $HOME/.config/zsh
+# moving my dotfiles from ~ to .config. This was done when I instlled dotfiles
+# telling the system that my startup file is moved to .config
 echo 'export ZDOTDIR=$HOME/.config/zsh' > $HOME/.zshenv #all config in .config folder
-rm $HOME/.zshrc # Fetc file from my repo later on to $ZDOTDIR
-
-# Creating rest of enviroment structure
-mkdir $HOME/repos
-mkdir $HOME/repos/own
-mkdir $HOME/repos/others
-# Creating a stow dir to store configs
-# Here you can read more about stow
-# https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
-mkdir $HOME/stow
-mkdir $HOME/stow/zsh
-# clone my dotfile repo to $HOME/stow
-git config --global user.email "hackjack@tutanota.com"
-git config --global user.name "hackjack"
-
-# keygen stuff
-#https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
-# ssh-keygen -t ed25519 -C "hackjack@tutanota.com"
-# eval "$(ssh-agent -s)"
-# cat ~/.ssh/id_ed25519.pub | clip.exe
-
-# install stow
-# https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
-sudo apt-get update -y
-sudo apt-get install -y stow
+rm $HOME/.zshrc # Remove startup from installation
 
 
-# install program that is dependent on ChristianChiarulli zsh config
+# install program that is dependent on ChristianChiarulli zsh config witch I have copied
 # https://github.com/ChristianChiarulli/Machfiles/tree/master/zsh/.config/zsh
 # https://github.com/ajeetdsouza/zoxide
 curl -sS https://webinstall.dev/zoxide | bash
