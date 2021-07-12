@@ -5,6 +5,7 @@
 # curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash > install.bash
 # chmod +x ./install.bash
 # ./install.bash # runs the schript 
+# rm ./install.bash
 #
 # OR
 #
