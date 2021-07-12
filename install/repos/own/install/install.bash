@@ -1,8 +1,8 @@
 # Start installscript
 
 
-git clone git@github.com:craftsmandigital/dotfiles.git ~/stow
-~/stow/install/repos/own/install
+### git clone git@github.com:craftsmandigital/dotfiles.git ~/stow
+### ~/stow/install/repos/own/install.bash
 
 
 
@@ -52,9 +52,9 @@ sudo apt-get install -y stow
 
 
 
-# Downoload my dotfiles
+#### Downoload my dotfiles
 cd ~/stow
-git clone git@github.com:$GITHUBPROFILE/dotfiles.git
+### git clone git@github.com:$GITHUBPROFILE/dotfiles.git
 # Spread dotfiles to the right places
 # Here you can read more about stow
 # https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
