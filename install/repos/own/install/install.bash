@@ -10,7 +10,7 @@
 #Installing ubuntu 20 config
 
 function intro(){
-  echo '#########################################################################################################'
+  echo "\n\n\n\n#########################################################################################################"
   echo "#########     $1"
   echo '#########################################################################################################'
 }
@@ -60,7 +60,7 @@ sudo apt-get install -y stow
 intro 'Downoload my dotfiles from git'
 echo 'First time on git. Please copy and fill in the fingerprint prashe'
 git clone git@github.com:$GITHUBPROFILE/dotfiles.git ~/stow
-intro 'Spread dotfiles to the right placeswth stow'
+intro 'Spread dotfiles to the right places with stow'
 # Here you can read more about stow
 # https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
 cd ~/stow
