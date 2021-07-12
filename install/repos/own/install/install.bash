@@ -2,7 +2,9 @@
 
 # This is for a tottaly fresh install of ubuntu wsl2. Git and Git credentials is not configured.
 
-# curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash | bash
+# curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash > install.bash
+# chmod +x ./install.bash
+# ./install.bash # runs the schript 
 #
 # OR
 #
