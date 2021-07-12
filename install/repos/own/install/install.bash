@@ -6,7 +6,7 @@
 # choose your favorite text editor vi, vim, etc
 # copy this schript into the editor
 # save script as install.bash
-# chmod + x ./install.bash
+# chmod +x ./install.bash
 # ./install.bash # runs the schript
 
 ###############################################
@@ -38,6 +38,7 @@ git config --global user.name $USR
 
 # keygen stuff, Credentials for github
 #https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent
+echo "Enter password for SSH key encryption"
 ssh-keygen -t ed25519 -C $EMAIL
 eval "$(ssh-agent -s)"
 # Copy ssh key to clipoard
@@ -82,7 +83,7 @@ rm $HOME/.zshrc # Remove startup from installation
 # install program that is dependent on ChristianChiarulli zsh config witch I have copied
 # https://github.com/ChristianChiarulli/Machfiles/tree/master/zsh/.config/zsh
 # https://github.com/ajeetdsouza/zoxide
-curl -sS https://webinstall.dev/zoxide
+curl -sS https://webinstall.dev/zoxide | bash
 ## https://github.com/Schniz/fnm
 # curl -fsSL https://fnm.vercel.app/install | bash
 
