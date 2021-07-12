@@ -2,6 +2,10 @@
 
 # This is for a tottaly fresh install of ubuntu wsl2. Git and Git credentials is not configured.
 
+# curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash | bash
+#
+# OR
+#
 # open a terminal
 # choose your favorite text editor vi, vim, etc
 # copy this schript into the editor
