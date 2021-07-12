@@ -1,11 +1,13 @@
 # Start installscript
 
+# This is for a tottaly fresh install of ubuntu wsl2. Git and Git credentials is not configured.
 
-### git clone git@github.com:craftsmandigital/dotfiles.git ~/stow
-### ~/stow/install/repos/own/install.bash
-
-
-
+# open a terminal
+# choose your favorite text editor vi, vim, etc
+# copy this schript into the editor
+# save script as install.bash
+# chmod + x ./install.bash
+# ./install.bash # runs the schript
 
 ###############################################
 #Installing ubuntu 20 config
@@ -15,16 +17,16 @@ USR='hackjack'
 GITHUBPROFILE='craftsmandigital'
 
 
-# Creating enviroment structure
-# moving dotfiles from ~ later on
-mkdir $HOME/.config/zsh
-# Repo stuff
-mkdir $HOME/repos
-mkdir $HOME/repos/own
-mkdir $HOME/repos/others
-# Creating a stow dir to store configs
-mkdir $HOME/stow
-mkdir $HOME/stow/zsh
+## Creating enviroment structure
+## moving dotfiles from ~ later on
+#mkdir $HOME/.config/zsh
+## Repo stuff
+#mkdir $HOME/repos
+#mkdir $HOME/repos/own
+#mkdir $HOME/repos/others
+## Creating a stow dir to store configs
+#mkdir $HOME/stow
+#mkdir $HOME/stow/zsh
 
 
 
@@ -80,7 +82,7 @@ rm $HOME/.zshrc # Remove startup from installation
 # install program that is dependent on ChristianChiarulli zsh config witch I have copied
 # https://github.com/ChristianChiarulli/Machfiles/tree/master/zsh/.config/zsh
 # https://github.com/ajeetdsouza/zoxide
-curl -sS https://webinstall.dev/zoxide | bash
+curl -sS https://webinstall.dev/zoxide
 ## https://github.com/Schniz/fnm
 # curl -fsSL https://fnm.vercel.app/install | bash
 
