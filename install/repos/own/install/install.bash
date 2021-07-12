@@ -2,19 +2,9 @@
 
 # This is for a tottaly fresh install of ubuntu wsl2. Git and Git credentials is not configured.
 
-# curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash > install.bash
-# chmod +x ./install.bash
-# ./install.bash # runs the schript 
-# rm ./install.bash
-#
-# OR
-#
-# open a terminal
-# choose your favorite text editor vi, vim, etc
-# copy this schript into the editor
-# save script as install.bash
-# chmod +x ./install.bash
-# ./install.bash # runs the schript
+# curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash > /tmp/install.bash
+# chmod +x /tmp/install.bash
+# /tmp/install.bash # runs the schript 
 
 ###############################################
 #Installing ubuntu 20 config
