@@ -7,6 +7,7 @@
 # /tmp/install.bash # runs the schript 
 
 ###############################################
+# zsh config is stolen from https://github.com/ChristianChiarulli/Machfiles/tree/master/zsh/.config/zsh
 #Installing ubuntu 20 config
 
 function intro(){
