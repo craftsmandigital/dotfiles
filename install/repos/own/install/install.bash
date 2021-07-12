@@ -94,7 +94,7 @@ curl -sS https://webinstall.dev/zoxide | bash
 # Setting Up Neovim on WSL2 on Ubuntu
 # https://evancalz.medium.com/setting-up-neovim-on-wsl2-bf634cac435f
 # add the repo
-$ sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/unstable
 # update & install
-$ sudo apt-get update
-$ sudo apt-get install neovim
+sudo apt-get update
+sudo apt-get install neovim
