@@ -1,4 +1,13 @@
+# Start installscript
 
+
+git clone git@github.com:craftsmandigital/dotfiles.git ~/stow
+~/stow/install/repos/own/install
+
+
+
+
+###############################################
 #Installing ubuntu 20 config
 
 EMAIL='hackjack@tutanota.com'
