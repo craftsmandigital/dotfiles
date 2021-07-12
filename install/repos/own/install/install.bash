@@ -92,7 +92,7 @@ rm $HOME/.zshrc # Remove startup from installation
 # https://github.com/ajeetdsouza/zoxide
 # curl -sS https://webinstall.dev/zoxide | bash
 curl -sS https://webinstall.dev/zoxide > /tmp/zoxide.bash
-chmod -x /tmp/zoxide.bash
+chmod +x /tmp/zoxide.bash
 /tmp/zoxide.bash
 ## https://github.com/Schniz/fnm
 # curl -fsSL https://fnm.vercel.app/install | bash
