@@ -12,7 +12,7 @@
 
 function intro(){
   echo -e "\n\n\n\n#########################################################################################################"
-  echo "#########     $1"
+  echo -e "#########     $1"
   echo '#########################################################################################################'
 }
 
@@ -95,8 +95,6 @@ chmod +x /tmp/zoxide.bash
 # --------------------------------------------------------
 # --------------------------------------------------------
 
-
-
 intro 'Setting Up Neovim on WSL2 on Ubuntu'
 # https://evancalz.medium.com/setting-up-neovim-on-wsl2-bf634cac435f
 # add the repo
@@ -106,3 +104,20 @@ sudo add-apt-repository -y ppa:neovim-ppa/stable
 sudo apt-get update -y
 sudo apt-get install -y neovim
 nvim --version  
+
+# bunc of stuff from this gist
+# https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
+intro 'Setting Up a bunch of things: sudo apt install -y fzf ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments'
+sudo apt install -y fzf ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments
+sudo select-default-wordlist
+
+sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
+sudo gem install neovim
+sudo npm install -g neovim eslint jsonlint
+
+intro "Installing Spacevim\After install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
+curl -sLf https://spacevim.org/install.sh | bash
+# launch neo-vim to download and install plugins
+# Launch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter.
+
+
