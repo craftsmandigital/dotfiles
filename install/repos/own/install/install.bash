@@ -16,6 +16,13 @@ function intro(){
   echo '#########################################################################################################'
 }
 
+intro "Update Ubuntu"
+sudo apt update -y
+intro "Upgrade Ubuntu"
+sudo apt upgrade -y
+
+
+
 intro "Setting environment variables"
 
 EMAIL='hackjack@tutanota.com'
@@ -114,6 +121,7 @@ sudo select-default-wordlist
 sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
 sudo gem install neovim
 sudo npm install -g neovim eslint jsonlint
+mkdir -p ~/.local/share/nvim/shada
 
 intro "Installing Spacevim\After install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
 curl -sLf https://spacevim.org/install.sh | bash
