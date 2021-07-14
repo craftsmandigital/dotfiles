@@ -11,7 +11,7 @@
 #Installing ubuntu 20 config
 
 function intro(){
-  echo "\n\n\n\n#########################################################################################################"
+  echo - e "\n\n\n\n#########################################################################################################"
   echo "#########     $1"
   echo '#########################################################################################################'
 }
@@ -100,7 +100,9 @@ chmod +x /tmp/zoxide.bash
 intro 'Setting Up Neovim on WSL2 on Ubuntu'
 # https://evancalz.medium.com/setting-up-neovim-on-wsl2-bf634cac435f
 # add the repo
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
+# sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo add-apt-repository -y ppa:neovim-ppa/stable
 # update & install
 sudo apt-get update -y
 sudo apt-get install -y neovim
+nvim --version  
