@@ -59,21 +59,6 @@ cat ~/.ssh/id_ed25519.pub | clip.exe
 wslview https://github.com/settings/keys
 read -p "The ssh key is copied to the clipboard\nPaste ssh key when creating a new ssh key in the github web page\nSave ssh key\nPress any key to resume ..."
 
-intro "install stow"
-# https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
-sudo apt-get update -y
-sudo apt-get install -y stow
-
-
-intro 'Downoload my dotfiles from git'
-echo 'First time on git. Please copy and fill in the fingerprint prashe'
-git clone git@github.com:$GITHUBPROFILE/dotfiles.git ~/stow
-intro 'Spread dotfiles to the right places with stow'
-# Here you can read more about stow
-# https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
-cd ~/stow
-stow */ # Everything (the '/' ignores the README)
-cd ~
 
 intro 'Install and Setup Zsh in Ubuntu 20.04'
 # How to Install and Setup Zsh in Ubuntu 20.04
@@ -112,9 +97,15 @@ sudo apt-get update -y
 sudo apt-get install -y neovim
 nvim --version  
 
+
+# Install fzf from git
+intro 'Install fzf form git'
+git clone git@github.com:junegunn/fzf.git ~/gitSoftware/fzf
+~/gitSoftware/fzf/install
+
 # bunc of stuff from this gist
 # https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
-intro 'Setting Up a bunch of things: sudo apt install -y fzf ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments'
+intro 'Setting Up a bunch of things: sudo apt install -y ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments'
 sudo apt install -y fzf ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments
 sudo select-default-wordlist
 
@@ -123,9 +114,24 @@ sudo gem install neovim
 sudo npm install -g neovim eslint jsonlint
 mkdir -p ~/.local/share/nvim/shada
 
-intro "Installing Spacevim\After install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
+intro "Installing Spacevim\nAfter install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
 curl -sLf https://spacevim.org/install.sh | bash
 # launch neo-vim to download and install plugins
 # Launch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter.
+rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
+
+intro "install stow"
+# https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
+sudo apt-get update -y
+sudo apt-get install -y stow
 
 
+intro 'Downoload my dotfiles from git'
+echo 'First time on git. Please copy and fill in the fingerprint prashe'
+git clone git@github.com:$GITHUBPROFILE/dotfiles.git ~/stow
+intro 'Spread dotfiles to the right places with stow'
+# Here you can read more about stow
+# https://paramdeo.com//blog/managing-dotfiles-with-git-and-gnu-stow
+cd ~/stow
+stow */ # Everything (the '/' ignores the README)
+cd ~
