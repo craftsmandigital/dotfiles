@@ -93,30 +93,36 @@ git clone git@github.com:junegunn/fzf.git ~/repos/others/fzf
 
 # bunc of stuff from this gist
 # https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
-intro 'Setting Up a bunch of things: sudo apt install -y ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments'
-sudo apt install -y fzf ripgrep fd-find ctags miscfiles python3-dev python3-pip rsync shellcheck software-properties-common wbritish wbritish-huge nodejs npm gcc g++ make universal-ctags python3-pygments
-sudo select-default-wordlist
+intro 'Setting Up a bunch of things: sudo apt install -y ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags'
+sudo apt install -y ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags
+# sudo select-default-wordlist
 
-sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
-sudo gem install neovim
-sudo npm install -g neovim eslint jsonlint
-mkdir -p ~/.local/share/nvim/shada
+#sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
+#sudo gem install neovim
+#sudo npm install -g neovim eslint jsonlint
+#mkdir -p ~/.local/share/nvim/shada
 
 intro "Installing Spacevim\nAfter install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
 curl -sLf https://spacevim.org/install.sh | bash
 # launch neo-vim to download and install plugins
-# Launch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter.
+read -p "Launching neo-vim,type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter. Exit neovim. Pres any key to continue ..."
+nvim
 rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
 mkdir ~/.SpaceVim.d/autoload # make folder to denie stow to symlink autoload folder.
 
+intro "Fixing ugly error message in Vim"
+cd ~/.SpaceVim/bundle/vimproc.vim 
+make
+cd ~
+
 
 # Creating enviroment structure
-mkdir $HOME/.config
+# mkdir $HOME/.config
 mkdir $HOME/.config/zsh
 # Repo stuff
-mkdir $HOME/repos
+# mkdir $HOME/repos
 mkdir $HOME/repos/own
-mkdir $HOME/repos/others
+# mkdir $HOME/repos/others
 
 intro "install stow"
 # https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
