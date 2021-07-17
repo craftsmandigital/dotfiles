@@ -112,6 +112,7 @@ mkdir ~/.SpaceVim.d/autoload # make folder to denie stow to symlink autoload fol
 
 # Creating enviroment structure
 mkdir $HOME/.config
+mkdir $HOME/.config/zsh
 # Repo stuff
 mkdir $HOME/repos
 mkdir $HOME/repos/own
