@@ -107,6 +107,7 @@ curl -sLf https://spacevim.org/install.sh | bash
 # launch neo-vim to download and install plugins
 # Launch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter.
 rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
+mkdir ~/.SpaceVim.d/autoload # make folder to denie stow to symlink autoload folder.
 
 
 # Creating enviroment structure
