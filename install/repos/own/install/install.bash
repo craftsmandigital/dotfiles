@@ -11,6 +11,7 @@
 #Installing ubuntu 20 config
 
 function intro(){
+  read -p "\n\n\nControl every step.\nPress any key to resume ...\n\n\n"
   echo -e "\n\n\n\n#########################################################################################################"
   echo -e "#########     $1"
   echo '#########################################################################################################'
@@ -28,19 +29,6 @@ intro "Setting environment variables"
 EMAIL='hackjack@tutanota.com'
 USR='hackjack'
 GITHUBPROFILE='craftsmandigital'
-
-
-## Creating enviroment structure
-## moving dotfiles from ~ later on
-#mkdir $HOME/.config/zsh
-## Repo stuff
-#mkdir $HOME/repos
-#mkdir $HOME/repos/own
-#mkdir $HOME/repos/others
-## Creating a stow dir to store configs
-#mkdir $HOME/stow
-#mkdir $HOME/stow/zsh
-
 
 
 intro "Config git username and email"
@@ -100,8 +88,8 @@ nvim --version
 
 # Install fzf from git
 intro 'Install fzf form git'
-git clone git@github.com:junegunn/fzf.git ~/gitSoftware/fzf
-~/gitSoftware/fzf/install
+git clone git@github.com:junegunn/fzf.git ~/repos/others/fzf
+~/repos/others/fzf/install
 
 # bunc of stuff from this gist
 # https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
@@ -119,6 +107,14 @@ curl -sLf https://spacevim.org/install.sh | bash
 # launch neo-vim to download and install plugins
 # Launch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter.
 rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
+
+
+# Creating enviroment structure
+mkdir $HOME/.config
+# Repo stuff
+mkdir $HOME/repos
+mkdir $HOME/repos/own
+mkdir $HOME/repos/others
 
 intro "install stow"
 # https://zoomadmin.com/HowToInstall/UbuntuPackage/stow
