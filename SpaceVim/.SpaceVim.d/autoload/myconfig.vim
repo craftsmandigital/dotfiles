@@ -21,7 +21,10 @@ set updatetime=100
 set shortmess+=c
 set scrolloff=8
 "
+" Paste from windows clipboard
+" https://github.com/microsoft/WSL/issues/4440
 
+set clipboard=unnamedplus
 "=============================================================================
 "" Custom Keybindings
 "=============================================================================
@@ -63,7 +66,15 @@ augroup END
 :echo exists('##TextYankPost')
 
 
-
+" Share system clipboard with windows
+" https://github.com/microsoft/WSL/issues/4440
+let s:clip = '/mnt/c/Windows/System32/clip.exe'
+if executable(s:clip)
+    augroup WSLYank
+          autocmd!
+          autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
+    augroup END
+endif
 
 endfunction
 

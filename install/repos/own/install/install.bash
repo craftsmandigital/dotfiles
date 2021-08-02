@@ -4,7 +4,7 @@
 
 # curl -L https://raw.githubusercontent.com/craftsmandigital/dotfiles/master/install/repos/own/install/install.bash > /tmp/install.bash
 # chmod +x /tmp/install.bash
-# /tmp/install.bash # runs the schript 
+# /tmp/install.bash # runs the schript
 
 ###############################################
 # zsh config is stolen from https://github.com/ChristianChiarulli/Machfiles/tree/master/zsh/.config/zsh
@@ -83,7 +83,7 @@ sudo add-apt-repository -y ppa:neovim-ppa/stable
 # update & install
 sudo apt-get update -y
 sudo apt-get install -y neovim
-nvim --version  
+nvim --version
 
 
 # Install fzf from git
@@ -94,13 +94,22 @@ git clone git@github.com:junegunn/fzf.git ~/repos/others/fzf
 # bunc of stuff from this gist
 # https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
 intro 'Setting Up a bunch of things: sudo apt install -y ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags'
-sudo apt install -y ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags
+sudo apt install -y unzip ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags
 # sudo select-default-wordlist
 
 #sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
 #sudo gem install neovim
 #sudo npm install -g neovim eslint jsonlint
 #mkdir -p ~/.local/share/nvim/shada
+
+intro "Stuff to paste windows clipboard to vim"
+# https://github.com/microsoft/WSL/issues/4440
+curl -sLo /tmp/win32yank.zip
+https://github.com/equalsraf/win32yank/releases/download/v0.0.4/win32yank-x64.zip
+unzip -p /tmp/win32yank.zip win32yank.exe > /tmp/win32yank.exe
+chmod +x /tmp/win32yank.exe
+sudo mv /tmp/win32yank.exe ~/.local/bin
+
 
 intro "Installing Spacevim\nAfter install do this:\nlaunch neo-vim to download and install plugins\nLaunch neo-vim and type :VimProcInstall followed by enter, then :UpdateRemotePlugins followed by enter."
 curl -sLf https://spacevim.org/install.sh | bash
@@ -111,7 +120,7 @@ rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
 mkdir ~/.SpaceVim.d/autoload # make folder to denie stow to symlink autoload folder.
 
 intro "Fixing ugly error message in Vim"
-cd ~/.SpaceVim/bundle/vimproc.vim 
+cd ~/.SpaceVim/bundle/vimproc.vim
 make
 cd ~
 
