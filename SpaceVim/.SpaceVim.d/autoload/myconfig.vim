@@ -24,11 +24,13 @@ set scrolloff=8
 " Paste from windows clipboard
 " https://github.com/microsoft/WSL/issues/4440
 
+
+
 set clipboard=unnamedplus
 "=============================================================================
 "" Custom Keybindings
 "=============================================================================
-"nnoremap W :w
+nnoremap W :w<cr>
 "nnoremap coc :Coc
 "nnoremap C :Cheat<cr>
 "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
@@ -42,10 +44,25 @@ set clipboard=unnamedplus
 "nnoremap <C-w> :w<cr>
 "nnoremap <C-q> :q!<cr>
 "nnoremap <C-x> :wq<cr>
-"
+nnoremap H ^
+nnoremap L $
+nnoremap Y y$
+
+inoremap ø ;
+nnoremap ø ;
+
+inoremap Ø :
+nnoremap Ø :
+
+inoremap å [
+nnoremap å [
+
+inoremap Å {
+nnoremap Å {
 "=============================================================================
 " Sneak
 "=============================================================================
+" øøøøøøøøøøøøøøøø
 " map s <Plug>Sneak_s
 " map S <Plug>Sneak_S
 "
@@ -67,6 +84,7 @@ augroup END
 
 
 " Share system clipboard with windows
+
 " https://github.com/microsoft/WSL/issues/4440
 let s:clip = '/mnt/c/Windows/System32/clip.exe'
 if executable(s:clip)
