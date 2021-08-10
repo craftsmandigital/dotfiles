@@ -94,13 +94,20 @@ git clone git@github.com:junegunn/fzf.git ~/repos/others/fzf
 # bunc of stuff from this gist
 # https://gist.github.com/HouzuoGuo/9a48c6d28b90a16434ccfbdd9d9e4065
 intro 'Setting Up a bunch of things: sudo apt install -y ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags'
-sudo apt install -y unzip ripgrep fd-find ctags nodejs npm gcc g++ make universal-ctags
+sudo apt install -y unzip ripgrep fd-find ctags gcc g++ make universal-ctags
 # sudo select-default-wordlist
 
 #sudo pip3 install --upgrade pynvim msgpack flake8 yapf autoflake isort coverage jedi
 #sudo gem install neovim
 #sudo npm install -g neovim eslint jsonlint
 #mkdir -p ~/.local/share/nvim/shada
+
+intro 'Installing node and npm'
+# Using Ubuntu
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt-get install -y nodejs
+sudo npm install -g npm@7.20.5
+
 
 intro "Stuff to paste windows clipboard to vim"
 # https://github.com/microsoft/WSL/issues/4440
@@ -148,3 +155,17 @@ intro 'Spread dotfiles to the right places with stow'
 cd ~/stow
 stow */ # Everything (the '/' ignores the README)
 cd ~
+
+intro 'Installing PHP'
+sudo apt install software-properties-common
+sudo add-apt-repository ppa:ondrej/php
+sudo apt update
+sudo apt install -y php8.0
+
+intro 'Installing remark formating for markdown files'
+sudo npm -g install remark
+sudo npm -g install remark-cli
+sudo npm -g install remark-stringify
+sudo npm -g install remark-frontmatter
+sudo npm -g install wcwidth
+

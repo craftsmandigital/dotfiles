@@ -27,10 +27,11 @@ set scrolloff=8
 
 
 set clipboard=unnamedplus
+" set langmap='æ,\;ø,[å
+
 "=============================================================================
 "" Custom Keybindings
 "=============================================================================
-nnoremap W :w<cr>
 "nnoremap coc :Coc
 "nnoremap C :Cheat<cr>
 "nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
@@ -50,15 +51,28 @@ nnoremap Y y$
 
 inoremap ø ;
 nnoremap ø ;
+cnoremap ø ;
 
 inoremap Ø :
 nnoremap Ø :
+cnoremap Ø :
 
 inoremap å [
 nnoremap å [
+cnoremap å [
 
 inoremap Å {
 nnoremap Å {
+cnoremap Å {
+
+inoremap æ '
+nnoremap æ '
+cnoremap æ '
+onoremap æ '
+
+inoremap Æ "
+nnoremap Æ "
+cnoremap Æ "
 "=============================================================================
 " Sneak
 "=============================================================================
