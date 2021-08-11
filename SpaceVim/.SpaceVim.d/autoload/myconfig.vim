@@ -11,7 +11,8 @@ set wrap
 set textwidth=80
 set linebreak
 set nobackup
-set nohlsearch
+set noswapfile
+" set nowritebackup               " Don't backup before overwriting fileset nohlsearch
 set incsearch
 set history=1000
 set signcolumn=yes
@@ -108,9 +109,28 @@ if executable(s:clip)
     augroup END
 endif
 
+augroup filetype_md
+    autocmd!
+    autocmd FileType markdown inoremap <buffer> ø ø
+    autocmd FileType markdown inoremap <buffer> å å
+    autocmd FileType markdown inoremap <buffer> æ æ
+    autocmd FileType markdown inoremap <buffer> Æ Æ
+    autocmd FileType markdown inoremap <buffer> Ø Ø
+    autocmd FileType markdown inoremap <buffer> Å Å
+
+    autocmd FileType markdown :iabbrev <buffer> øø ;
+    autocmd FileType markdown :iabbrev <buffer> åå [
+    autocmd FileType markdown :iabbrev <buffer> ææ '
+    autocmd FileType markdown :iabbrev <buffer> ÆÆ "
+    autocmd FileType markdown :iabbrev <buffer> ØØ :
+    autocmd FileType markdown :iabbrev <buffer> ÅÅ {
+augroup END
+
 endfunction
 
 
 
 function! myconfig#before() abort
+  " Adding keys from homerow to acces startify items, instead of the default numbers.
+  let g:startify_custom_indices = ['f', 'd', 'h', 'j', 'k', 'l', 's', 'g', 'h']
 endfunction

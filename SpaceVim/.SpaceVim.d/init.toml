@@ -33,6 +33,7 @@
 
 [[layers]]
   name = "lang#markdown"
+  enabled_formater = ["remark", "prettier"]
 
 # Enable autocomplete layer
 [[layers]]

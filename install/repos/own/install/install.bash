@@ -162,10 +162,10 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 sudo apt install -y php8.0
 
-intro 'Installing remark formating for markdown files'
+intro 'Installing remark and prettier formating for markdown files'
 sudo npm -g install remark
 sudo npm -g install remark-cli
 sudo npm -g install remark-stringify
 sudo npm -g install remark-frontmatter
 sudo npm -g install wcwidth
-
+sudo npm install --global prettier
