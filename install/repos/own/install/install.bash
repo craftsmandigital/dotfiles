@@ -125,7 +125,9 @@ read -p "Launching neo-vim,type :VimProcInstall followed by enter, then :UpdateR
 nvim
 rm ~/.SpaceVim.d/init.toml # Copy from my dotfiles later on.
 mkdir ~/.SpaceVim.d/autoload # make folder to denie stow to symlink autoload folder.
-
+# because of a bug vith spellcheck in other languages than english
+# https://github.com/SpaceVim/SpaceVim/issues/3051
+mkdir ~/.SpaceVim.d/spell
 intro "Fixing ugly error message in Vim"
 cd ~/.SpaceVim/bundle/vimproc.vim
 make

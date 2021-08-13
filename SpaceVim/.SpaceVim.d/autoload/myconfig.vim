@@ -30,6 +30,9 @@ set scrolloff=8
 set clipboard=unnamedplus
 " set langmap='æ,\;ø,[å
 
+set spelllang=nb
+set spellsuggest=fast,20 "Don't show too much suggestion for spell check.
+set spellfile=~/.config/myvimconfig/nb.utf-8.add
 "=============================================================================
 "" Custom Keybindings
 "=============================================================================
