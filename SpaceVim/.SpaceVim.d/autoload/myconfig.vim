@@ -33,6 +33,10 @@ set clipboard=unnamedplus
 set spelllang=nb
 set spellsuggest=fast,20 "Don't show too much suggestion for spell check.
 set spellfile=~/.config/myvimconfig/nb.utf-8.add
+
+let g:favoriteFolders = "~/.config/myvimconfig/favoriteFolders.txt"
+
+
 "=============================================================================
 "" Custom Keybindings
 "=============================================================================
@@ -77,6 +81,8 @@ onoremap æ '
 inoremap Æ "
 nnoremap Æ "
 cnoremap Æ "
+
+nnoremap gt :call fzf#run(fzf#wrap({'source': 'cat ' . g:favoriteFolders, 'sink': 'Files'}))<CR>
 "=============================================================================
 " Sneak
 "=============================================================================

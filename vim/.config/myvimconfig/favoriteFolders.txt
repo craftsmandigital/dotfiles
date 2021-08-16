@@ -1,0 +1,7 @@
+/mnt/c/Users/jviks/Documents/Maser\ AS
+/mnt/c/Users/jviks/Documents/dev
+~/stow
+~
+~/repos
+/mnt/c/Users/jviks/Documents
+/
