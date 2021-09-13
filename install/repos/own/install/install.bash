@@ -108,6 +108,11 @@ curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt-get install -y nodejs
 sudo npm install -g npm@7.20.5
 
+intro 'Installing lazygit'
+sudo add-apt-repository -y ppa:lazygit-team/release
+sudo apt-get -y update
+sudo apt-get -y install lazygit
+
 
 intro "Stuff to paste windows clipboard to vim"
 # https://github.com/microsoft/WSL/issues/4440

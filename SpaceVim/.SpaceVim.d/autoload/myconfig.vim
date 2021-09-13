@@ -133,6 +133,8 @@ augroup filetype_md
     autocmd FileType markdown :iabbrev <buffer> ÆÆ "
     autocmd FileType markdown :iabbrev <buffer> ØØ :
     autocmd FileType markdown :iabbrev <buffer> ÅÅ {
+    " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+    autocmd BufEnter * silent! lcd %:p:h
 augroup END
 
 endfunction
